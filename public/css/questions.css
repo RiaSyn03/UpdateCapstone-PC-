@@ -1,0 +1,45 @@
+.wrapper{
+
+  position:relative;
+  left:35%;
+  top:100px;
+  width: 600px;
+  background: rgba(255, 255, 255,0.2);
+  border-radius: 10px;
+  box-shadow: 10px 5px 20px #A45EE5;
+}
+.wrapper .title{
+  color: #fff;
+  line-height: 65px;
+  text-align: center;
+  background: #A45EE5;
+  font-size: 25px;
+  font-weight: 500;
+  border-radius: 10px 10px 0 0;
+  padding: 20px;
+}
+.wrapper .box{
+
+  padding: 20px 30px;
+  background: rgba(255, 255, 255, 0.774);
+  border-radius: 10px;
+}
+.wrapper label{
+  display: flex;
+  height: 53px;
+  width: 100%;
+  align-items: center;
+  border: 1px solid lightgrey;
+  border-radius: 50px;
+  margin: 10px 0;
+  padding-left: 20px;
+  cursor: default;
+  transition: all 0.3s ease;
+}
+.wrapper .box input[type="radio"]{
+  display: none;
+}
+.wrapper .box input[type="radio"]:checked+label{
+  background-color: #A45EE5;
+  background-image: linear-gradient(62deg,  #E0C3FC 0%, #A45EE5 100%)
+}
