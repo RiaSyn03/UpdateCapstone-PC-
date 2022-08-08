@@ -14,9 +14,9 @@
          </ul>
      </header>
      @include('partials.alerts') 
-     <div class="examscard" id="blur">   
+  
      
-     <div class="p-2">
+     <!-- <div class="p-2">
       <button type="button" onclick="toggle()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AddAccountModal">Add Account</button></div> 
       <div id="popup">
         <h2><div><center>Add Question Here</center></div></h2>
@@ -41,24 +41,98 @@
 
         <div onclick="toggle()"><center>Close</center></div>
         
-    </div>     
+    </div>      -->
                 <div class="card-body">
-
-<table border = "1">
+                <div class="tabbed">
+    <input type="radio" name="tabs" id="tab-nav-1" checked>
+    <label for="tab-nav-1">Stress Scale</label>
+    <input type="radio" name="tabs" id="tab-nav-2">
+    <label for="tab-nav-2">Personality</label>
+    <input type="radio" name="tabs" id="tab-nav-3">
+    <label for="tab-nav-3">Learners</label>
+    <div class="tabs">
+      <div>
+      <table class="table table-striped">
+<thead>
+<tr>
+   <th colspan="4"><center><h2>STRESS</h2></center></th>
+</tr>
 <tr>
 <td>Question No.</td>
 <td>Question</td>
 <td>Type of Question</td>
 <td>Action</td>
 </tr>
-@foreach ($questions as $question)
+</thead>
+@foreach ($stressquestions as $stress)
 @csrf
 <form method="post" action="viewquestions" >
 <tr>
-<input type="hidden" class="btn_val_id" value="{{ $question->id }}">
-<td>{{ $question->question_num }}</td>
-<td>{{ $question->question}}</td>
-<td>{{ $question->question_type }}</td>
+<input type="hidden" class="btn_val_id" value="{{ $stress->id }}">
+<td><p>{{ $stress->question_num }}</p></td>
+<td><p>{{ $stress->question}}</p></td>
+<td><center><p>{{ $stress->question_type }}</p></center></td>
+<td>
+</form>
+  <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>     
+  </td>
+</tr>
+
+@endforeach
+</table>
+<button type="button" value="Add Account">Add Account</button></div>
+      <div>
+      <table class="table table-striped">
+<thead>
+<tr>
+   <th colspan="4"><center><h2>PERSONALITY</h2></center></th>
+</tr>
+<td>Question No.</td>
+<td>Question</td>
+<td>Type of Question</td>
+<td>Action</td>
+</tr>
+</thead>
+@foreach ($personalityquestions as $personality)
+@csrf
+<form method="post" action="viewquestions" >
+<tr>
+<input type="hidden" class="btn_val_id" value="{{ $personality->id }}">
+<td><p>{{ $personality->question_num }}</p></td>
+<td><p>{{ $personality->question}}</p></td>
+<td><p>{{ $personality->question_type }}</p></td>
+<td>
+</form>
+  <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>     
+  </td>
+</tr>
+
+@endforeach
+</table>
+
+</div>
+
+      <div>
+      <table class="table table-striped">
+<thead>
+<tr>
+   <th colspan="4"><center><h2>LEARNERS</h2></center></th>
+</tr>
+<tr>
+<td>Question No.</td>
+<td>Question</td>
+<td>Type of Question</td>
+<td>Action</td>
+</tr>
+</thead>
+@foreach ($learnersquestions as $learner)
+@csrf
+<form method="post" action="viewquestions" >
+<tr>
+<input type="hidden" class="btn_val_id" value="{{ $learner->id }}">
+<td><p>{{ $learner->question_num }}</p></td>
+<td><p>{{ $learner->question}}</p></td>
+<td><p>{{ $learner->question_type }}</p></td>
 <td>
 </form>
   <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>     
@@ -66,6 +140,9 @@
 </tr>
 @endforeach
 </table>
+</div>
+    </div>
+  </div>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 $(document).ready(function(){

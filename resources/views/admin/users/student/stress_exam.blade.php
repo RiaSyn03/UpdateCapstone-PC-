@@ -11,6 +11,7 @@
              <li><a href="{{ url('home') }}">Go to Homepage</a></li>
          </ul>
      </header>
+     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <form method="POST" action="stress_exam" name="stressquestion" id="stressquestion">
 @csrf
 @foreach ($stress as $question)
@@ -34,7 +35,12 @@
         Nearly everyday
       </label>
     </div>
+    
     </div>
+    <div class="container-top">
+    <a href="#" class="top"></a>
+  </div>
+    
     
     <br><br><br>
     
@@ -44,8 +50,11 @@
 <br><br><br>    <br><br><br>
 <center>
 <h3>Depression Severity: 0-4 none, 5-9 mild, 10-14 moderate, 15-19 moderately severe, 20-27 severe.</h3>
-<button type="button" onclick="calculate()">Get Result</button>
+<br><br>
+<button class="resultbutton" type="button" onclick="calculate()">Get Result</button>
+
 </center>
+
 <!-- 
 <p>The Result is : <br>
 	<span id = "result"></span>
@@ -143,6 +152,28 @@ $(":radio")
 };
 
   </script>
+  <script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
 
   
 @endsection

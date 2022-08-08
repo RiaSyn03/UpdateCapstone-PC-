@@ -18,8 +18,11 @@ class QuestionController extends Controller
     public function index()
     {
         $questions = Question::all(); 
+        $stressquestions = Question::where('question_type','stress')->get();
+        $personalityquestions = Question::where('question_type','personality')->get(); 
+        $learnersquestions = Question::where('question_type','learners')->get(); 
         
-        return view('admin.users.councilour.questions.viewquestions', compact('questions'));
+        return view('admin.users.councilour.questions.viewquestions', compact('questions','stressquestions','personalityquestions','learnersquestions'));
     }
 
     /**

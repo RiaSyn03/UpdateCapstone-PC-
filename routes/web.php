@@ -127,6 +127,7 @@ Route::get('/personality_exam', 'Councilour\QuestionController@personality')->na
 Route::post('/viewquestions', 'Councilour\QuestionController@create')->name('viewquestions');
 Route::delete('/question-delete/{id}', 'Councilour\QuestionController@destroy');
 Route::get('/myfinishappointments', 'Councilour\Appointmentlist@finishappointments')->name('myfinishappointments');
+Route::get('/home', 'Councilour\Appointmentlist@percentage')->name('home');
 
 //Student//
 Route::post('/stdntappointment', 'Councilour\Appointmentlist@store')->name('stdntappointment');

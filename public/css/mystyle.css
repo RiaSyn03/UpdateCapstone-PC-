@@ -2822,6 +2822,23 @@ Copyright (c) 2015 Daniel Eden
     
 }
 
+.questioncard {
+    
+    position:absolute;
+    left:25%;
+    top:30%;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.658);
+    box-shadow: 10px 5px 20px #A45EE5;
+    margin-bottom: 30px;
+    width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 1000px;
+    
+}
+
 .card-content {
     padding-left: 30px;
     border-radius: 20px;
@@ -6443,10 +6460,11 @@ max-height: 400px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 400px;
-    width: 320px;
+    height: 500px;
+    width: 700px;
     transform-style: preserve-3d;
     perspective: 1000px;
+    box-shadow: 10px 5px 20px #4EC6DE;
 }
 
 .not-stresscard .not-stress-face,
@@ -6454,7 +6472,7 @@ max-height: 400px;
     height: 100%;
     width: 100%;
     text-align: center;
-    background: url("../img/not-stress.jpg");
+    background: url("../img/ambivert.png");
     background-size: cover;
     background-position: center;
     border-radius: 10px;

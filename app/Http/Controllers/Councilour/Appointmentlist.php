@@ -151,4 +151,14 @@ class Appointmentlist extends Controller
         return view('admin.users.councilour.myfinishappointments', compact('donelist'));
 
     }
+    public function percentage()
+    {
+        $show = Timeslot::all();
+        $accept = Timeslot::where('status', '1')->get()->count();
+        $pending = Timeslot::where('status', '0')->get()->count();
+        $total =  Timeslot::all()->count();
+        
+
+        return view('home', compact('accept','pending','total'));
+    }
 }

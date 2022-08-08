@@ -142,6 +142,11 @@
      <div class="content">
                     <div class="container-fluid">
                                 <div class="homecard">    
+                                <canvas id="pie-chart" width="800" height="400"></canvas>
+                                <input type="hidden" id="accept" value="{{$accept}}"/>
+                                <input type="hidden" id="pending" value="{{$pending}}"/>
+                                <input type="hidden" id="total" value="{{$total}}"/>
+                                <script src="js/piechart.js"></script>
                    
 
                 @endhasrole
