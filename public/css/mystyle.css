@@ -6629,4 +6629,71 @@ max-height: 400px;
     
 }
 
-
+.calendar#blur.active {
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+#popup
+{
+    position: fixed;
+    top: 30%;
+    left: 3%; 
+    transition: translate(-50%,-50%);
+    width: 850px;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0,0,0, .30);
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+#popup.active
+{
+    top: 20%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+#popup2
+{
+    position: fixed;
+    top: 30%;
+    left: 3%; 
+    transition: translate(-50%,-50%);
+    width: 850px;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0,0,0, .30);
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+#popup2.active
+{
+    top: 20%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+#popup3
+{
+    position: fixed;
+    top: 30%;
+    left: 3%; 
+    transition: translate(-50%,-50%);
+    width: 850px;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0,0,0, .30);
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+#popup3.active
+{
+    top: 20%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}

@@ -5,7 +5,7 @@
 <body>
 <section>
      <header>
-         <a href="#" class="logo">Logo</a>
+     <div class="logo">Logo</div>
          <ul>
          <li><a href="{{ url('home') }}">Home</a></li>
              <li><a href="{{ url('viewquestions') }}"class="active">Questions</a></li>
@@ -13,41 +13,14 @@
              <li><a href="{{ url('myfinishappointments') }}">Completed Appointments</a></li>
          </ul>
      </header>
-     @include('partials.alerts') 
-  
-     
-     <!-- <div class="p-2">
-      <button type="button" onclick="toggle()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AddAccountModal">Add Account</button></div> 
-      <div id="popup">
-        <h2><div><center>Add Question Here</center></div></h2>
-        <form action="viewquestions" method="POST">
-  @csrf
-  <label>Number
-  <input id="question_num" class="form-control" name="question_num"></label>
-  <br>
-  <label>Question</label>
-  <input id="question" type="text" class="form-control" name="question">
-  <label class="custom-select">
-    Question Type
-    <select name="question_type">
-      <option value="stress">Stress</option>
-      <option value="learners">Learners</option>
-      <option value="personality">Personality</option>
-    </select>
-  </label>
-  <button type="submit">Submit</button>
-</form>
-        
-
-        <div onclick="toggle()"><center>Close</center></div>
-        
-    </div>      -->
-                <div class="card-body">
+     @include('partials.alerts')     
+                <div class="card-body"> 
                 <div class="tabbed">
     <input type="radio" name="tabs" id="tab-nav-1" checked>
     <label for="tab-nav-1">Stress Scale</label>
     <input type="radio" name="tabs" id="tab-nav-2">
     <label for="tab-nav-2">Personality</label>
+    
     <input type="radio" name="tabs" id="tab-nav-3">
     <label for="tab-nav-3">Learners</label>
     <div class="tabs">
@@ -80,7 +53,31 @@
 
 @endforeach
 </table>
-<button type="button" value="Add Account">Add Account</button></div>
+<button type="button" onclick="toggle()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AddAccountModal">Add Question</button>
+<div class="p-2">
+       <div id="popup">
+         <h2><div><center>Add Question Here</center></div></h2>
+         <form action="viewquestions" method="POST">
+   @csrf
+   <label>Number
+   <input id="question_num" class="form-control" name="question_num"></label>
+   <br>
+   <label>Question</label>
+   <input id="question" type="text" class="form-control" name="question">
+   <label class="custom-select">
+     Question Type
+     <select name="question_type">
+       <option value="stress">Stress</option>
+     </select>
+   </label>
+   <button type="submit">Submit</button>
+ </form>
+         
+         <div onclick="toggle()"><center>Close</center></div>
+         
+</div>
+</div>
+</div>
       <div>
       <table class="table table-striped">
 <thead>
@@ -109,7 +106,30 @@
 
 @endforeach
 </table>
-
+<button type="button" onclick="toggle()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AddAccountModal">Add Question</button>
+<div class="p-2">
+       <div id="popup2">
+         <h2><div><center>Add Question Here</center></div></h2>
+         <form action="viewquestions" method="POST">
+   @csrf
+   <label>Number
+   <input id="question_num" class="form-control" name="question_num"></label>
+   <br>
+   <label>Question</label>
+   <input id="question" type="text" class="form-control" name="question">
+   <label class="custom-select">
+     Question Type
+     <select name="question_type">
+       <option value="personality">Personality</option>
+     </select>
+   </label>
+   <button type="submit">Submit</button>
+ </form>
+         
+         <div onclick="toggle()"><center>Close</center></div>
+         
+</div>
+</div>
 </div>
 
       <div>
@@ -140,6 +160,30 @@
 </tr>
 @endforeach
 </table>
+<button type="button" onclick="toggle()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AddAccountModal">Add Question</button>
+<div class="p-2">
+       <div id="popup3">
+         <h2><div><center>Add Question Here</center></div></h2>
+         <form action="viewquestions" method="POST">
+   @csrf
+   <label>Number
+   <input id="question_num" class="form-control" name="question_num"></label>
+   <br>
+   <label>Question</label>
+   <input id="question" type="text" class="form-control" name="question">
+   <label class="custom-select">
+     Question Type
+     <select name="question_type">
+       <option value="learners">Learners</option>
+     </select>
+   </label>
+   <button type="submit">Submit</button>
+ </form>
+         
+         <div onclick="toggle()"><center>Close</center></div>
+         
+</div>
+</div>
 </div>
     </div>
   </div>
@@ -207,10 +251,13 @@ swalWithBootstrapButtons.fire({
 <script>
   function toggle(){
     
-    var blur = document.getElementById('blur');
-     blur.classList.toggle('active');
+   
     var popup = document.getElementById('popup');
     popup.classList.toggle('active');
+    var popup2 = document.getElementById('popup2');
+    popup2.classList.toggle('active');
+    var popup3 = document.getElementById('popup3');
+    popup3.classList.toggle('active');
     
 }
   </script>

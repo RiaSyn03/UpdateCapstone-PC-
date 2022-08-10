@@ -3,7 +3,7 @@
 <link href="{{ asset('css/questions.css') }}" rel="stylesheet">
 <section>
      <header>
-         <a href="#" class="logo">Logo</a>
+         <div class="logo">Logo</div>
          <ul>
              <li><a href="{{ url('stress_exam') }}" class="active">Stress Scale</a></li>
              <li><a href="{{ url('personality_exam') }}" >Personality</a></li>
