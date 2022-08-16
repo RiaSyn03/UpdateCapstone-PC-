@@ -12,8 +12,9 @@
          </ul>
      </header>
      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-<form name="stressquestion" id="stressquestion">
-@foreach ($personality as $question)
+     <form method="POST" action="personality_exam" name="personalityquestion" id="personalityquestion">
+     @csrf
+     @foreach ($personality as $question)
 <div class="wrapper">
   <div class="title">{{ $question->question_num }}. {{ $question->question}}</div>
   <div class="box">
@@ -57,7 +58,7 @@
 </p> -->
 <div id="not-stressmodal">
             <div class="not-stresscard" id="not-stresscard">
-                <div class="not-stress-face"></div>
+                <div class="introvert-face"></div>
                 <div class="back-face">
                 <br><br><br>
                     <button type="submit">Submit</button>
@@ -69,7 +70,7 @@
         </div>
 <div id="stressmodal">
             <div class="stresscard" id="stresscard">
-                <div class="stress-face"></div>
+                <div class="ambivert-face"></div>
                 <div class="back-face">
                     <br><br><br>
                     <button type="submit">Submit</button>
@@ -81,13 +82,12 @@
         </div>
         <div id="super-stressmodal">
             <div class="super-stresscard" id="super-stresscard">
-                <div class="super-stress-face"></div>
+                <div class="extrovert-face"></div>
                 <div class="back-face">
                     <br><br><br>
                     <button type="submit">Submit</button>
                     <br><br><br>
                     <a href="#" onclick="calculate()">close</a>
-                    
                 </div>
             </div>
         </div>
@@ -111,38 +111,38 @@ $(":radio")
     $("#total").text(total);
     
     
-    var notstress = maxscore*0.25;
-    var stress = maxscore*0.50;
-    var superstress = maxscore*0.75;
+    var introvert = maxscore*0.25;
+    var ambivert = maxscore*0.50;
+    var extrovert = maxscore*0.75;
     // $("#result").text(notstress);
     
-    if(total <= notstress )
+    if(total <= introvert )
     {
       // var blur = document.getElementById('blur');
       // blur.classList.toggle('active');
       var notstressmodal = document.getElementById('not-stressmodal');
       notstressmodal.classList.toggle('active');
-      $("#result_name").val("You are not stress");
+      $("#result_name").val("You are an introvert");
       
        
         }
 
-    else if (total <= superstress)
+    else if (total <= extrovert)
     {
       // var blur = document.getElementById('blur');
       // blur.classList.toggle('active');
       var stressmodal = document.getElementById('stressmodal');
       stressmodal.classList.toggle('active');
-      $("#result_name").val("You are stress");
+      $("#result_name").val("You are an ambivert");
     }
-    else if (total > superstress)
+    else if (total > extrovert)
     {
       // var blur = document.getElementById('blur');
       // blur.classList.toggle('active');
       var superstressmodal = document.getElementById('super-stressmodal');
       superstressmodal.classList.toggle('active');
    
-      $("#result_name").val("You are so stress");
+      $("#result_name").val("You are an extrovert");
     }
 
 };

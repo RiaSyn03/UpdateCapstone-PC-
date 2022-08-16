@@ -95,6 +95,18 @@
                 </div>
             </div>
         </div>
+        <div id="moderately-severe-stressmodal">
+            <div class="moderately-severe-stresscard" id="moderately-severe-stresscard">
+                <div class="moderately-severe-face"></div>
+                <div class="back-face">
+                    <br><br><br>
+                    <button type="submit">Submit</button>
+                    <br><br><br>
+                    <a href="#" onclick="calculate()">close</a>
+                   
+                </div>
+            </div>
+        </div>
         </form>
   <input type="hidden" value="{{$questioncount}}" id="noquestions" name="noquestions"/><br>
 </section>
@@ -115,9 +127,11 @@ $(":radio")
     $("#total").text(total);
     
     
-    var notstress = maxscore*0.25;
-    var stress = maxscore*0.50;
-    var superstress = maxscore*0.75;
+    var notstress = maxscore*0.16;
+    var stress = maxscore*0.33;
+    var superstress = maxscore*0.50;
+    var moderately = maxscore*0.66;
+    var severe = maxscore*0.83;
     // $("#result").text(notstress);
     
     if(total <= notstress )
@@ -126,27 +140,43 @@ $(":radio")
       // blur.classList.toggle('active');
       var notstressmodal = document.getElementById('not-stressmodal');
       notstressmodal.classList.toggle('active');
-      $("#result_name").val("You are not stress");
+      $("#result_name").val("You don't have a depression");
       
        
         }
 
-    else if (total <= superstress)
+    else if (total <= stress)
     {
       // var blur = document.getElementById('blur');
       // blur.classList.toggle('active');
       var stressmodal = document.getElementById('stressmodal');
       stressmodal.classList.toggle('active');
-      $("#result_name").val("You are stress");
+      $("#result_name").val("You have mild depression");
     }
-    else if (total > superstress)
+    else if (total <= superstress)
     {
       // var blur = document.getElementById('blur');
       // blur.classList.toggle('active');
       var superstressmodal = document.getElementById('super-stressmodal');
       superstressmodal.classList.toggle('active');
+      $("#result_name").val("You have moderate depression");
+    }
+    else if (total <= moderately)
+    {
+      // var blur = document.getElementById('blur');
+      // blur.classList.toggle('active');
+      var moderatelystressmodal = document.getElementById('moderately-severe-stressmodal');
+      moderatelystressmodal.classList.toggle('active');
    
-      $("#result_name").val("You are so stress");
+      $("#result_name").val("You have a moderately severe depression");
+    }
+    else if (total > moderately)
+    {
+      // var blur = document.getElementById('blur');
+      // blur.classList.toggle('active');
+      var severemodal = document.getElementById('severe-stressmodal');
+      severemodal.classList.toggle('active');
+      $("#result_name").val("You have severe depression");
     }
 
 };

@@ -92,7 +92,6 @@ Route::get('/exams_history', function () {
 });
 
 
-
 Auth::routes();
 
 // Admin //
@@ -122,8 +121,6 @@ Route::post('/viewtime', 'Councilour\Appointmentlist@done')->name('viewtime');
 Route::get('/viewquestions', 'Councilour\QuestionController@index')->name('viewquestions');
 Route::get('/listofapprovedappointments', 'Myapprovedappointments@index')->name('listofapprovedappointments');
 Route::get('/change-status/{id}', 'Councilour\Appointmentlist@status')->name('changestatus');
-Route::get('/learner_exam', 'Councilour\QuestionController@learner')->name('learner_exam');
-Route::get('/personality_exam', 'Councilour\QuestionController@personality')->name('personality_exam');
 Route::post('/viewquestions', 'Councilour\QuestionController@create')->name('viewquestions');
 Route::delete('/question-delete/{id}', 'Councilour\QuestionController@destroy');
 Route::get('/myfinishappointments', 'Councilour\Appointmentlist@finishappointments')->name('myfinishappointments');
@@ -134,7 +131,11 @@ Route::post('/stdntappointment', 'Councilour\Appointmentlist@store')->name('stdn
 Route::get('/appointment_history', 'Councilour\Appointmentlist@show')->name('appointment_history');
 Route::get('/stress_exam', 'Councilour\QuestionController@stress')->name('stress_exam');
 Route::post('/stress_exam', 'Councilour\QuestionController@store')->name('stress_exam');
+Route::get('/personality_exam', 'Councilour\QuestionController@personality')->name('personality_exam');
+Route::post('/personality_exam', 'Councilour\QuestionController@pstore')->name('personality_exam');
 Route::get('/exams_history', 'Councilour\QuestionController@showexam')->name('exams_history');
+Route::get('/learner_exam', 'Councilour\QuestionController@learner')->name('learner_exam');
+Route::post('/learner_exam', 'Councilour\QuestionController@lstore')->name('learner_exam');
 Route::get('/exam_result', 'Councilour\QuestionController@result')->name('exam_result');
 Route::post('/exam_result', 'Councilour\QuestionController@store')->name('exam_result');
 Route::post('/stdnttime', 'Councilour\Appointmentlist@store',['except'=>['show','create','store']])->name('stdnttime');

@@ -69,6 +69,36 @@ class QuestionController extends Controller
         return redirect()->route('stress_exam')->with('success','Exam Added');
     }
 
+    public function pstore(Request $request)
+    {       
+        $this->validate($request,[
+            'result_name' => 'required',
+          ]);
+
+        $result = new Result;
+        $result->user_id = $request->user()->id;
+        $result->result_name = $request->input('result_name');
+        $result->save();
+
+        // return view('admin.users.student.exam_result');
+        return redirect()->route('personality_exam');
+    }
+
+    public function lstore(Request $request)
+    {       
+        $this->validate($request,[
+            'result_name' => 'required',
+          ]);
+
+        $result = new Result;
+        $result->user_id = $request->user()->id;
+        $result->result_name = $request->input('result_name');
+        $result->save();
+
+        // return view('admin.users.student.exam_result');
+        return redirect()->route('learner_exam');
+    }
+
     /**
      * Display the specified resource.
      *

@@ -6337,101 +6337,6 @@ max-height: 400px;
     user-select: none;
 }
 
-
-#stressmodal
-{
-    position: fixed;
-    top: 20%;
-    left: 50%; 
-    transition: translate(-50%,-50%);
-    width: 600px;
-    padding: 50px;
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.5s;
-}
-#stressmodal.active
-{
-    top: 40%;
-    visibility: visible;
-    opacity: 1;
-    transition: 0.5s;
-}
-
-.stressmodal, .stress-face, .back-face {
-    position: absolute;
-}
-
-.stresscard {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 400px;
-    width: 320px;
-    transform-style: preserve-3d;
-    perspective: 1000px;
-}
-
-.stresscard .stress-face,
-.stresscard .back-face {
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    background: url("../img/stress.jpg");
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    backface-visibility: hidden;
-    transition: transform .7s cubic-bezier(.4, .2, .2, 1);
-}
-.stresscard .back-face {
-    transform: rotateY(180deg);
-    background: url('super-stress.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.stresscard .back-face h2 {
-    margin-top: 40%;
-    color: #ffffff;
-    font-size: 32px;
-    letter-spacing: 1px;
-}
-
-.stresscard .back-face p {
-    margin-top: 6px;
-    color: #dddddd;
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-.stresscard .back-face .icons {
-    margin-top: 30px;
-}
-
-.stresscard .back-face .icons i {
-    cursor: pointer;
-    color: #d74039;
-    background: #ffffff;
-    font-size: 20px;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 50%;
-    margin: 0 5px;
-}
-
-.stresscard:hover > .back-face {
-    transform: rotateY(0deg);
-}
-
-.stresscard:hover > .stress-face {
-    transform: rotateY(-180deg);
-}
-
-
-
 #not-stressmodal
 {
     position: fixed;
@@ -6472,7 +6377,7 @@ max-height: 400px;
     height: 100%;
     width: 100%;
     text-align: center;
-    background: url("../img/ambivert.png");
+    background: url("../img/none.png");
     background-size: cover;
     background-position: center;
     border-radius: 10px;
@@ -6526,6 +6431,101 @@ max-height: 400px;
 }
 
 
+#stressmodal
+{
+    position: fixed;
+    top: 20%;
+    left: 50%; 
+    transition: translate(-50%,-50%);
+    width: 600px;
+    padding: 50px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+#stressmodal.active
+{
+    top: 40%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.stressmodal, .stress-face, .back-face {
+    position: absolute;
+}
+
+.stresscard {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 500px;
+    width: 700px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    box-shadow: 10px 5px 20px #4EC6DE;
+}
+
+.stresscard .stress-face,
+.stresscard .back-face {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background: url("../img/mild.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transition: transform .7s cubic-bezier(.4, .2, .2, 1);
+}
+
+.stresscard .back-face {
+    transform: rotateY(180deg);
+    background: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.stresscard .back-face h2 {
+    margin-top: 40%;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+.stresscard .back-face p {
+    margin-top: 6px;
+    color: #dddddd;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.stresscard .back-face .icons {
+    margin-top: 30px;
+}
+
+.stresscard .back-face .icons i {
+    cursor: pointer;
+    color: #d74039;
+    background: #ffffff;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.stresscard:hover > .back-face {
+    transform: rotateY(0deg);
+}
+
+
+.stresscard:hover > .stress-face {
+    transform: rotateY(-180deg);
+}
+
 #super-stressmodal
 {
     position: fixed;
@@ -6554,10 +6554,11 @@ max-height: 400px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 400px;
-    width: 320px;
+    height: 500px;
+    width: 700px;
     transform-style: preserve-3d;
     perspective: 1000px;
+    box-shadow: 10px 5px 20px #4EC6DE;
 }
 
 .super-stresscard .super-stress-face,
@@ -6565,7 +6566,7 @@ max-height: 400px;
     height: 100%;
     width: 100%;
     text-align: center;
-    background: url("../img/super-stress.jpg");
+    background: url("../img/moderate.png");
     background-size: cover;
     background-position: center;
     border-radius: 10px;
@@ -6574,7 +6575,7 @@ max-height: 400px;
 }
 .super-stresscard .back-face {
     transform: rotateY(180deg);
-    background: url('super-stress.jpg');
+    background: black;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -6617,6 +6618,100 @@ max-height: 400px;
 .super-stresscard:hover > .super-stress-face {
     transform: rotateY(-180deg);
 }
+
+#moderately-severe-stressmodal
+{
+    position: fixed;
+    top: 20%;
+    left: 50%; 
+    transition: translate(-50%,-50%);
+    width: 600px;
+    padding: 50px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+#moderately-severe-stressmodal.active
+{
+    top: 40%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.moderately-severe-stressmodal, .moderately-severe-face, .back-face {
+    position: absolute;
+}
+
+.moderately-severe-stresscard {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 500px;
+    width: 700px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    box-shadow: 10px 5px 20px #4EC6DE;
+}
+
+.moderately-severe-stresscard .moderately-severe-face,
+.moderately-severe-stresscard .back-face {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background: url("../img/moderately-severe.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transition: transform .7s cubic-bezier(.4, .2, .2, 1);
+}
+.moderately-severe-stresscard .back-face {
+    transform: rotateY(180deg);
+    background: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.moderately-severe-stresscard .back-face h2 {
+    margin-top: 40%;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+.moderately-severe-stresscard .back-face p {
+    margin-top: 6px;
+    color: #dddddd;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.moderately-severe-stresscard .back-face .icons {
+    margin-top: 30px;
+}
+
+.moderately-severe-stresscard .back-face .icons i {
+    cursor: pointer;
+    color: #d74039;
+    background: #ffffff;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.moderately-severe-stresscard:hover > .back-face {
+    transform: rotateY(0deg);
+}
+
+.moderately-severe-stresscard:hover > .moderately-severe-face {
+    transform: rotateY(-180deg);
+}
+
 
 
 .examscard td p
@@ -6696,4 +6791,132 @@ max-height: 400px;
     visibility: visible;
     opacity: 1;
     transition: 0.5s;
+}
+
+.not-stresscard .introvert-face
+ {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background: url("../img/introvert.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transition: transform .7s cubic-bezier(.4, .2, .2, 1);
+}
+
+.not-stresscard:hover > .introvert-face {
+    transform: rotateY(-180deg);
+}
+
+.not-stressmodal, .introvert-face, .back-face {
+    position: absolute;
+}
+
+.stresscard .ambivert-face{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background: url("../img/ambivert.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transition: transform .7s cubic-bezier(.4, .2, .2, 1);
+}
+
+
+.stresscard:hover > .ambivert-face {
+    transform: rotateY(-180deg);
+}
+
+.stressmodal, .ambivert-face, .back-face {
+    position: absolute;
+}
+
+.super-stresscard .extrovert-face
+{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background: url("../img/extrovert.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transition: transform .7s cubic-bezier(.4, .2, .2, 1);
+}
+
+
+.super-stresscard:hover > .extrovert-face {
+    transform: rotateY(-180deg);
+}
+
+.super-stressmodal, .extrovert-face, .back-face {
+    position: absolute;
+}
+
+.not-stresscard .linguistic-face
+ {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background: url("../img/linguistic.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transition: transform .7s cubic-bezier(.4, .2, .2, 1);
+}
+
+.not-stresscard:hover > .linguistic-face {
+    transform: rotateY(-180deg);
+}
+
+.not-stressmodal, .linguistic-face, .back-face {
+    position: absolute;
+}
+
+.stresscard .kinesthetic-face{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background: url("../img/kinesthetic.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transition: transform .7s cubic-bezier(.4, .2, .2, 1);
+}
+
+
+.stresscard:hover > .kinesthetic-face {
+    transform: rotateY(-180deg);
+}
+
+.stressmodal, .kinesthetic-face, .back-face {
+    position: absolute;
+}
+
+.super-stresscard .visual-face
+{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background: url("../img/visual.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transition: transform .7s cubic-bezier(.4, .2, .2, 1);
+}
+
+
+.super-stresscard:hover > .visual-face {
+    transform: rotateY(-180deg);
+}
+
+.super-stressmodal, .visual-face, .back-face {
+    position: absolute;
 }
